@@ -4,7 +4,7 @@ let array = [10,76,45,923,463,8,49]
 function searchElement(array, target){
     for(let i = 0; i<array.length;i++){
         if (array[i] == target){
-            return i
+            return i //returns the index
         } 
     }
     return -1
