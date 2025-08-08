@@ -15,7 +15,7 @@ function secondLargest(arr){
         if(arr[i]>largest){
             secondLargestNumber = largest
             largest = arr[i]
-        } else if (arr[i] > secondLargestNumber){
+        } else if (arr[i] > secondLargestNumber && arr[i] != findLargestNumber){ //checks for duplicates in array
             secondLargestNumber = arr[i]
         }
     }
