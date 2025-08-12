@@ -8,7 +8,7 @@ function reverseString(s){
 
     for(let i=0; i<halfLen; i++){
         let temp = s[i]
-        s[i] = s[len-i-1]
+        s[i] = s[len-i-1] //s[len-i-1] -> gives the last element to be swapped
         s[len-i-1] = temp
     }
 }
