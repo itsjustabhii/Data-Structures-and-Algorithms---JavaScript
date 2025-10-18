@@ -14,7 +14,7 @@ function validPalindrome(s){
     let filteredString = ""
 
     for(let i = 0; i<s.length; i++){
-        if(s[i].match(/[a-z0-9]/i)){
+        if(s[i].match(/[a-z0-9]/i)){ //to remove any alphanumeric characters
             filteredString += s[i]
         }
     }
