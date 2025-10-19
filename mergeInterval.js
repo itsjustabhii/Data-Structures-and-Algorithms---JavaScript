@@ -17,7 +17,7 @@ function merge(interval){
     let merged = [interval[0]]
 
     //Iterate through the interval
-    for(let i=1; i<interval-1; i++){
+    for(let i=1; i<interval.length; i++){
         let lastMerged = merge(merge.length-1)
         let current = interval[i]
 
