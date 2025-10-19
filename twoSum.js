@@ -19,5 +19,5 @@ function twoSum(arr,target){
     }
 }
 
-let result = twoSum([1,5,6,12,25],30)
+let result = twoSum([2,7,11,15],9)
 console.log(result)
