@@ -18,40 +18,40 @@ The output should not contain any duplicate triplets. You may return the output 
  * check for sum if it's equal to 0
  * check for duplicates
  * return
- * 
+ *
  */
 
-function threeSum(nums){
-    nums.sort((a,b) => a-b)
+function threeSum(nums) {
+  nums.sort((a, b) => a - b); //sort an array of numbers in ascending order(smallest to largest)
 
-    let result = []
+  let result = [];
 
-    for(let i=0; i<nums.length; i++){
-        //Skip duplicates i
-        if(i > 0 && nums[i] === nums[i-1]) continue
+  for (let i = 0; i < nums.length; i++) {
+    //Skip duplicates i
+    if (i > 0 && nums[i] === nums[i - 1]) continue;
 
-        let left = i+1
-        let right = nums.length-1
+    let left = i + 1;
+    let right = nums.length - 1;
 
-        while(left < right){
-            let sum = nums[i] + nums[left] + nums[right]
+    while (left < right) {
+      let sum = nums[i] + nums[left] + nums[right];
 
-            if(sum === 0){
-                result.push([nums[i], nums[left], nums[right]])
-                left++
-                right--
+      if (sum === 0) {
+        result.push([nums[i], nums[left], nums[right]]);
+        left++;
+        right--;
 
-                //Skip duplicates left & right
-                while(left < right && nums[left] === nums[left-1]) left++
-                while(left < right && nums[right] === nums[right+1]) right--
-            } else if(sum < 0){
-                left++
-            } else {
-                right--
-            }
-        }
+        //Skip duplicates left & right
+        while (left < right && nums[left] === nums[left - 1]) left++;
+        while (left < right && nums[right] === nums[right + 1]) right--;
+      } else if (sum < 0) {
+        left++;
+      } else {
+        right--;
+      }
     }
-    return result
+  }
+  return result;
 }
 
-console.log(threeSum([-1,0,1,2,-1,-4]))
+console.log(threeSum([-1, 0, 1, 2, -1, -4]));
