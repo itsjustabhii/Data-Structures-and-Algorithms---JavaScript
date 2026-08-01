@@ -32,23 +32,35 @@ Track the maximum length found.
  */
 
 function largestConsecutive(nums){
+    // Create a set from nums for O(1) membership checks.
+    // Duplicate values are removed automatically.
     let set = new Set(nums)
+
+    // Track the longest consecutive sequence found so far.
     let longest = 0
 
+    // Iterate over unique numbers in the set.
     for(let num of set){
+        // Only start counting when num is the beginning of a sequence.
+        // If num - 1 exists, then num is not the first number.
         if(!set.has(num -1)){
             let current = num
             let length = 1
 
-            while(set.has(current+1)){
-            current++
-            length++
-        }
-        longest = Math.max(longest, length)
-        }
+            // Expand the sequence while the next number exists in the set.
+            while(set.has(current + 1)){
+                current++
+                length++
+            }
 
+            // Update the longest length if this sequence is bigger.
+            longest = Math.max(longest, length)
+        }
     }
+
+    // Return the length of the longest consecutive sequence.
     return longest
 }
 
-console.log(largestConsecutive([2,20,4,10,3,4,5]))
+// Example usage and quick sanity check.
+console.log(largestConsecutive([2, 20, 4, 10, 3, 4, 5]))
