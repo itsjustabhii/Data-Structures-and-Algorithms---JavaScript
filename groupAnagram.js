@@ -3,8 +3,8 @@
 Given an array of strings strs, group the anagrams together. You can return the answer in any order.
 */
 
-let strs = ["eat","tea","tan","ate","nat","bat"]
-function groupAnagrams(strs){
+let strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
+function groupAnagrams(strs) {
     // Create an array of sorted characters for each string to use as a key
     // Anagrams will have identical sorted character sequences
     let sorted = strs.map((strs) => strs.split("").sort().join(""))
@@ -14,9 +14,9 @@ function groupAnagrams(strs){
     let map = {}
 
     // Iterate through each string in the input array
-    for(let i = 0; i<strs.length; i++){
+    for (let i = 0; i < strs.length; i++) {
         // Check if this sorted key already exists in the map
-        if(!map[sorted]){
+        if (!map[sorted[i]]) {
             // If key doesn't exist, create a new array with the current string
             map[sorted[i]] = [strs[i]]
         }
